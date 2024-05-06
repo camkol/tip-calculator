@@ -21,7 +21,11 @@ export default function Tip({ tipper, setTipper, children }) {
   return (
     <div className="slot">
       <h3 className="slotA">{children}</h3>
-      <select className="slotB" onChange={(e) => setTipper(e.target.value)}>
+      <select
+        className="slotB"
+        value={tipper}
+        onChange={(e) => setTipper(e.target.value)}
+      >
         {tip.map((item) => (
           <option key={item.percentage} value={item.percentage}>
             {item.text}
