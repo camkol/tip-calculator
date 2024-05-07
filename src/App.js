@@ -3,6 +3,7 @@ import Bill from "./Bill";
 import Tip from "./Tip";
 import Output from "./Output";
 import Reset from "./Reset";
+import TeachersApp from "./TeachersApp";
 
 function App() {
   const [bill, setBill] = useState(0);
@@ -18,16 +19,21 @@ function App() {
       <Tip tipper={friendsTip} setTipper={setFriendsTip}>
         How did your friend like the service?
       </Tip>
-      <Output
-        bill={Number(bill)}
-        yourTip={Number(yourTip)}
-        friendsTip={Number(friendsTip)}
-      />
-      <Reset
-        setBill={setBill}
-        setYourTip={setYourTip}
-        setFriendsTip={setFriendsTip}
-      />
+      {bill > 0 ? (
+        <>
+          <Output
+            bill={Number(bill)}
+            yourTip={Number(yourTip)}
+            friendsTip={Number(friendsTip)}
+          />
+          <Reset
+            setBill={setBill}
+            setYourTip={setYourTip}
+            setFriendsTip={setFriendsTip}
+          />
+        </>
+      ) : null}
+      <TeachersApp />
     </div>
   );
 }

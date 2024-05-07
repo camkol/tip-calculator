@@ -1,5 +1,5 @@
 export default function Output({ bill, yourTip, friendsTip }) {
-  const totalTip = (bill * (yourTip + friendsTip)).toFixed(2);
+  const totalTip = ((bill * (yourTip + friendsTip)) / 2).toFixed(2);
 
   const totalBill = (bill + parseFloat(totalTip)).toFixed(2);
 

@@ -5,6 +5,7 @@ export default function Bill({ bill, setBill }) {
       <input
         type="number"
         className="slotB"
+        placeholder="Bill amount"
         value={bill}
         onChange={(e) => setBill(e.target.value)}
       />
